@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Menu Viewer | Hong Kong Restaurant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --accent: #c93b3b;
+        --text: #2a2424;
+        --muted: #8a8079;
+        --line: #ececec;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      /* HEADER */
+
+      .menu-header {
+        text-align: center;
+        padding: 48px 24px 8px;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .download-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 24px;
+        padding: 12px 24px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-radius: 999px;
+        box-shadow: 0 6px 16px rgba(201, 59, 59, 0.28);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .download-link:hover,
+      .download-link:focus-visible {
+        background: #b22f2f;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(201, 59, 59, 0.4);
+        outline: none;
+      }
+
+      .download-link:active {
+        transform: translateY(0);
+      }
+
+      .download-link .icon {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      /* VIEWER */
+
+      .viewer-shell {
+        max-width: 880px;
+        margin: 30px auto 60px;
+        padding: 0 20px;
+      }
+
+      .viewer-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 24px;
+      }
+
+      .pdf-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+      }
+
+      canvas {
+        max-width: 100%;
+        height: auto !important;
+        display: block;
+      }
+
+      .loader {
+        text-align: center;
+        color: var(--muted);
+        padding: 80px 20px;
+        font-size: 14px;
+      }
+
+      /* PAGINATION */
+
+      .pager {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 32px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .pager .indicator {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .pager .page-info {
+        min-width: 64px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .pager button {
+        background: var(--accent);
+        border: none;
+        cursor: pointer;
+        font: inherit;
+        color: white;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 6px 16px rgba(201, 59, 59, 0.28);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .pager button:hover:not(:disabled),
+      .pager button:focus-visible {
+        background: #b22f2f;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(201, 59, 59, 0.4);
+        outline: none;
+      }
+
+      .pager button:active:not(:disabled) {
+        transform: translateY(0);
+      }
+
+      .pager button:disabled {
+        background: #e4dcd7;
+        color: #b3a8a0;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      .pager button .arrow {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        .menu-header {
+          padding: 32px 20px 4px;
+        }
+
+        .eyebrow {
+          font-size: 12px;
+          letter-spacing: 3px;
+        }
+
+        .viewer-shell {
+          margin: 20px auto 40px;
+          padding: 0 12px;
+        }
+
+        .viewer-card {
+          padding: 14px;
+        }
+
+        .pdf-container {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="menu-header">
+      <div class="eyebrow">Traditional Menu</div>
+
+      <a
+        class="download-link"
+        href="../menus/traditional-menu.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
+        <span class="icon" aria-hidden="true">&darr;</span>
+        Download PDF
+      </a>
+    </header>
+
+    <main class="viewer-shell">
+      <div class="viewer-card">
+        <div class="pdf-container">
+          <div class="loader" id="loader">Loading menu...</div>
+          <canvas id="pdf-render"></canvas>
+        </div>
+      </div>
+
+      <div class="pager">
+        <button id="prev" aria-label="Previous page">
+          <span class="arrow">&larr;</span> Prev
+        </button>
+        <span class="page-info">
+          <span class="indicator" id="page-num">1</span> /
+          <span id="page-count">--</span>
+        </span>
+        <button id="next" aria-label="Next page">
+          Next <span class="arrow">&rarr;</span>
+        </button>
+      </div>
+    </main>
+
+    <script>
+      // CHANGE THIS TO YOUR PDF FILE
+      const url = "../menus/traditional-menu.pdf";
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "../scripts/pdf.worker.min.js";
+
+      let pdfDoc = null;
+      let pageNum = 1;
+      let pageRendering = false;
+      let pageNumPending = null;
+
+      const scale = 1.6;
+
+      const canvas = document.getElementById("pdf-render");
+      const ctx = canvas.getContext("2d");
+
+      const loader = document.getElementById("loader");
+
+      function showError(message) {
+        console.error("PDF Viewer Error:", message);
+        loader.textContent = "Error loading menu. Please try refreshing the page.";
+        loader.style.color = "#c93b3b";
+      }
+
+      function renderPage(num) {
+        pageRendering = true;
+
+        pdfDoc.getPage(num).then(function (page) {
+          const viewport = page.getViewport({ scale });
+
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport,
+          };
+
+          const renderTask = page.render(renderContext);
+
+          renderTask.promise.then(function () {
+            pageRendering = false;
+
+            if (pageNumPending !== null) {
+              renderPage(pageNumPending);
+              pageNumPending = null;
+            }
+          }).catch(function (error) {
+            showError("Failed to render page: " + error.message);
+          });
+        }).catch(function (error) {
+          showError("Failed to get page: " + error.message);
+        });
+
+        document.getElementById("page-num").textContent = num;
+
+        loader.style.display = "none";
+      }
+
+      function queueRenderPage(num) {
+        if (pageRendering) {
+          pageNumPending = num;
+        } else {
+          renderPage(num);
+        }
+      }
+
+      function onPrevPage() {
+        if (pageNum <= 1) {
+          return;
+        }
+
+        pageNum--;
+
+        queueRenderPage(pageNum);
+
+        updateButtons();
+      }
+
+      function onNextPage() {
+        if (pageNum >= pdfDoc.numPages) {
+          return;
+        }
+
+        pageNum++;
+
+        queueRenderPage(pageNum);
+
+        updateButtons();
+      }
+
+      function updateButtons() {
+        document.getElementById("prev").disabled = pageNum <= 1;
+
+        document.getElementById("next").disabled = pageNum >= pdfDoc.numPages;
+      }
+
+      document.getElementById("prev").addEventListener("click", onPrevPage);
+
+      document.getElementById("next").addEventListener("click", onNextPage);
+
+      pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+        pdfDoc = pdfDoc_;
+
+        document.getElementById("page-count").textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+
+        updateButtons();
+      }).catch(function (error) {
+        showError("Failed to load PDF: " + error.message);
+      });
+    </script>
+  </body>
+</html>

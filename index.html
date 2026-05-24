@@ -1,0 +1,1952 @@
+<!doctype html>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Hong Kong Restaurant",
+    "image": "https://YOUR-GITHUB-PAGES-URL/images/home.jpg",
+    "url": "https://YOUR-GITHUB-PAGES-URL/",
+    "telephone": "+61-2-4868-2208",
+    "servesCuisine": ["Cantonese", "Chinese", "Yum Cha", "Dim Sum"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "474 Argyle Street",
+      "addressLocality": "Moss Vale",
+      "addressRegion": "NSW",
+      "postalCode": "2577",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.5497,
+      "longitude": 150.3736
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"],
+        "opens": "11:30",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Sunday"],
+        "opens": "17:00",
+        "closes": "21:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "11:30",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "17:00",
+        "closes": "22:00"
+      }
+    ],
+  }
+</script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Hong Kong Chinese Restaurant Moss Vale | Authentic Cantonese & Yum Cha in
+      the Southern Highlands
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Ma+Shan+Zheng&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f5f1ee;
+        --text: #221919;
+        --muted: #8b7b72;
+        --accent: #d9262c;
+        --card: #fffdfb;
+        --line: #e8dfd9;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* HEADER */
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        background: rgba(20, 16, 16, 0.55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.3s ease;
+      }
+
+      .logo {
+        font-family: "Ma Shan Zheng", "Cormorant Garamond", serif;
+        font-size: 40px;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 4px;
+        line-height: 1;
+      }
+
+      .logo span {
+        color: #ff4b4b;
+      }
+
+      .nav {
+        display: flex;
+        gap: 44px;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 1200;
+      }
+
+      .mobile-menu-btn span {
+        position: absolute;
+        left: 10px;
+        width: 24px;
+        height: 2px;
+        background: white;
+        border-radius: 999px;
+        transition: 0.3s ease;
+      }
+
+      .mobile-menu-btn span:nth-child(1) {
+        top: 14px;
+      }
+
+      .mobile-menu-btn span:nth-child(2) {
+        top: 21px;
+      }
+
+      .mobile-menu-btn span:nth-child(3) {
+        top: 28px;
+      }
+
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 21px;
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 21px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        transition: 0.2s ease;
+        position: relative;
+      }
+
+      .nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background: #ff4b4b;
+        transition: 0.25s ease;
+      }
+
+      .nav a:hover::after,
+      .nav a.active::after {
+        width: 100%;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: white;
+      }
+
+      /* HERO */
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 20px;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+          url("images/home/background.jpg") center/cover no-repeat;
+      }
+
+      .hero-content {
+        max-width: 900px;
+        color: white;
+      }
+
+      .eyebrow {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 22px;
+        opacity: 0.85;
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 110px;
+        line-height: 0.95;
+        margin-bottom: 28px;
+        font-weight: 700;
+      }
+
+      .hero-info {
+        font-size: 22px;
+        line-height: 1.6;
+        margin: 0 auto 40px;
+        opacity: 0.95;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        color: white;
+      }
+
+      .hero-info a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .hero-info a:hover {
+        color: #ff7a7a;
+      }
+
+      .hero-info .divider {
+        opacity: 0.6;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        padding: 18px 56px;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        border-radius: 4px;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .hero-cta:hover,
+      .hero-cta:focus-visible {
+        background: white;
+        color: #1a1212;
+        border-color: white;
+        transform: translateY(-2px);
+        outline: none;
+      }
+
+      @media (max-width: 768px) {
+        .hero-info {
+          font-size: 16px;
+          gap: 8px;
+          padding: 0 12px;
+        }
+
+        .hero-cta {
+          padding: 14px 40px;
+          font-size: 13px;
+          letter-spacing: 4px;
+          width: min(100%, 280px);
+        }
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 120px 70px;
+      }
+
+      .story-showcase {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .story-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .story-content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 78px;
+        line-height: 0.95;
+        margin-bottom: 34px;
+        font-weight: 700;
+      }
+
+      .story-content p {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 2;
+        margin-bottom: 28px;
+        max-width: 640px;
+      }
+
+      .story-subsections {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+        margin-top: 40px;
+      }
+
+      .story-subsection {
+        position: relative;
+        padding-left: 28px;
+        border-left: 1px solid rgba(217, 38, 44, 0.18);
+      }
+
+      .story-subsection::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .story-subsection h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 34px;
+        margin-bottom: 14px;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .story-subsection p {
+        margin-bottom: 0;
+        font-size: 17px;
+        line-height: 1.95;
+      }
+
+      .story-signature {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .signature-line {
+        width: 70px;
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .signature-text {
+        color: var(--accent);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .story-collage {
+        position: relative;
+        height: 760px;
+      }
+
+      .collage-img {
+        position: absolute;
+        overflow: hidden;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+      }
+
+      .collage-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .collage-large {
+        width: 72%;
+        height: 540px;
+        top: 0;
+        right: 0;
+      }
+
+      .collage-top {
+        width: 38%;
+        height: 240px;
+        top: 60px;
+        left: 0;
+        border: 10px solid var(--bg);
+      }
+
+      .collage-bottom {
+        width: 48%;
+        height: 300px;
+        bottom: 0;
+        left: 8%;
+        border: 10px solid var(--bg);
+      }
+
+      .story-stat {
+        position: absolute;
+        bottom: 60px;
+        right: -30px;
+        background: rgba(28, 20, 20, 0.92);
+        backdrop-filter: blur(14px);
+        padding: 34px;
+        border-radius: 26px;
+        width: 220px;
+        z-index: 4;
+        color: white;
+      }
+
+      .story-stat h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 60px;
+        line-height: 1;
+        margin-bottom: 10px;
+        color: #ff5a5a;
+      }
+
+      .story-stat p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .section-eyebrow {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 13px;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+
+      /* VALUES */
+
+      .values-section {
+        background: #efe7e2;
+        padding: 120px 40px;
+      }
+
+      .values-container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .values-header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+
+      .values-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 72px;
+        margin-top: 14px;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .value-card {
+        background: var(--card);
+        padding: 50px 40px;
+        border-radius: 28px;
+        transition: 0.3s ease;
+        border: 1px solid var(--line);
+      }
+
+      .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .value-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 60px;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+
+      .value-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 38px;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+
+      .value-card p {
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 16px;
+      }
+
+      /* QUOTE */
+
+      /* MENU SECTION */
+
+      .menu-section {
+        padding: 120px 40px;
+        background: #fffdfb;
+      }
+
+      .menu-container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .menu-header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+
+      .menu-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 72px;
+        margin-top: 14px;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .menu-card {
+        background: white;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .menu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .menu-card-content {
+        padding: 26px;
+      }
+
+      .menu-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 34px;
+        margin-bottom: 12px;
+      }
+
+      .menu-card p {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .menu-link {
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+      }
+
+      /* MENU MODAL */
+
+      .menu-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 10, 10, 0.78);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .menu-modal.open {
+        display: flex;
+        opacity: 1;
+      }
+
+      .menu-modal-frame {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 100%;
+        max-height: 90vh;
+        background: white;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+
+      .menu-modal.open .menu-modal-frame {
+        transform: translateY(0);
+      }
+
+      .menu-modal-close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(20, 16, 16, 0.85);
+        color: white;
+        cursor: pointer;
+        font-size: 22px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .menu-modal-close:hover,
+      .menu-modal-close:focus-visible {
+        background: var(--accent);
+        transform: scale(1.05);
+        outline: none;
+      }
+
+      .menu-modal iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .menu-modal {
+          padding: 0;
+        }
+
+        .menu-modal-frame {
+          max-width: 100%;
+          max-height: 100vh;
+          height: 100vh;
+          border-radius: 0;
+        }
+
+        .menu-modal-close {
+          top: 12px;
+          right: 12px;
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .quote-section {
+        padding: 140px 40px;
+        text-align: center;
+        background: white;
+      }
+
+      .quote {
+        max-width: 980px;
+        margin: 0 auto;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 66px;
+        line-height: 1.25;
+        color: var(--text);
+      }
+
+      .quote-author {
+        margin-top: 30px;
+        color: var(--accent);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      /* GALLERY */
+
+      .gallery-section {
+        padding: 120px 40px;
+        background: #f0e8e3;
+      }
+
+      .gallery-container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .gallery-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .gallery-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 72px;
+        margin-top: 14px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        gap: 14px;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 18px;
+        position: relative;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-item.tall {
+        grid-row: span 2;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
+
+      .gallery-cta {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .gallery-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: 4px;
+        transition: gap 0.2s ease;
+      }
+
+      .gallery-cta a:hover {
+        gap: 16px;
+      }
+
+      /* REVIEWS */
+
+      .reviews-section {
+        padding: 120px 40px;
+        background: #fffdfb;
+      }
+
+      .reviews-container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .reviews-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .reviews-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 72px;
+        margin-top: 14px;
+      }
+
+      .reviews-rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 22px;
+        padding: 12px 24px;
+        background: #fff8f0;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+      }
+
+      .reviews-rating .stars {
+        color: #f5a623;
+        letter-spacing: 2px;
+        font-size: 18px;
+      }
+
+      .reviews-rating .score {
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .reviews-rating .label {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 60px;
+      }
+
+      .review-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        transition: 0.3s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .review-stars {
+        color: #f5a623;
+        letter-spacing: 2px;
+        font-size: 15px;
+      }
+
+      .review-text {
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.75;
+        font-style: italic;
+      }
+
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: auto;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .review-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d9262c, #ff7a7a);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      .review-meta .name {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .review-meta .date {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 2px;
+      }
+
+      .reviews-cta {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .reviews-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 999px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .reviews-cta a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 32px rgba(217, 38, 44, 0.4);
+      }
+
+      @media (max-width: 1024px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-section,
+        .reviews-section {
+          padding: 80px 24px;
+        }
+
+        .gallery-header h2,
+        .reviews-header h2 {
+          font-size: 46px;
+        }
+
+        .gallery-grid {
+          grid-auto-rows: 160px;
+          gap: 10px;
+        }
+
+        .review-card {
+          padding: 26px;
+        }
+      }
+
+      /* FOOTER */
+
+      .footer {
+        background: #1f1717;
+        color: white;
+        text-align: center;
+        padding: 70px 20px;
+      }
+
+      .footer-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 44px;
+        margin-bottom: 18px;
+      }
+
+      .footer-logo span {
+        color: #ff4b4b;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 15px;
+      }
+
+      .footer-map {
+        max-width: 900px;
+        margin: 40px auto 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-map iframe {
+        display: block;
+        width: 100%;
+        height: 380px;
+        border: 0;
+      }
+
+      .trading-hours {
+        max-width: 560px;
+        margin: 50px auto 0;
+        padding: 36px 40px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        text-align: left;
+      }
+
+      .trading-hours h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+      }
+
+      .trading-hours ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .trading-hours li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 15px;
+      }
+
+      .trading-hours li:last-child {
+        border-bottom: none;
+      }
+
+      .trading-hours .day {
+        color: white;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+
+      .trading-hours .time {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-end;
+      }
+
+      .trading-hours .session {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .trading-hours .session-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 600;
+      }
+
+      .trading-hours .closed {
+        color: #ff7a7a;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-map {
+          margin-top: 30px;
+          border-radius: 16px;
+        }
+
+        .footer-map iframe {
+          height: 280px;
+        }
+
+        .trading-hours {
+          margin-top: 36px;
+          padding: 26px 22px;
+          border-radius: 16px;
+        }
+
+        .trading-hours h3 {
+          font-size: 26px;
+          margin-bottom: 18px;
+        }
+
+        .trading-hours li {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          padding: 12px 0;
+        }
+
+        .trading-hours .time {
+          text-align: left;
+          font-size: 14px;
+          align-items: flex-start;
+        }
+
+        .trading-hours .session {
+          gap: 8px;
+        }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 1024px) {
+        .story-showcase {
+          grid-template-columns: 1fr;
+        }
+
+        .story-content h2 {
+          font-size: 62px;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 82px;
+        }
+
+        .section h2,
+        .values-header h2 {
+          font-size: 56px;
+        }
+
+        .quote {
+          font-size: 50px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 18px;
+        }
+
+        .logo {
+          font-size: 24px;
+          line-height: 1;
+        }
+
+        .logo span {
+          display: inline-block;
+        }
+
+        .nav {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: rgba(20, 16, 16, 0.96);
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.35s ease;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav.open {
+          max-height: 320px;
+        }
+
+        .nav a {
+          width: 100%;
+          text-align: center;
+          padding: 18px 24px;
+        }
+
+        .nav a::after {
+          display: none;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .menu-card {
+          width: 100%;
+        }
+
+        .menu-card img {
+          height: 220px;
+        }
+
+        .hero {
+          min-height: 80vh;
+        }
+
+        .hero h1 {
+          font-size: 62px;
+        }
+
+        .hero p {
+          font-size: 17px;
+          line-height: 1.7;
+        }
+
+        .section {
+          padding: 80px 24px;
+        }
+
+        .section h2,
+        .values-header h2 {
+          font-size: 46px;
+        }
+
+        .story-collage {
+          height: 620px;
+        }
+
+        .collage-large {
+          width: 78%;
+          height: 420px;
+        }
+
+        .collage-top {
+          width: 42%;
+          height: 180px;
+        }
+
+        .collage-bottom {
+          width: 58%;
+          height: 220px;
+          left: 0;
+        }
+
+        .story-stat {
+          right: 0;
+          bottom: 20px;
+          width: 190px;
+          padding: 26px;
+        }
+
+        .quote-section {
+          padding: 90px 24px;
+        }
+
+        .quote {
+          font-size: 38px;
+        }
+
+        .values-section {
+          padding: 80px 24px;
+        }
+
+        .value-card {
+          padding: 38px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <header class="header">
+      <div class="logo">香港酒<span>家</span></div>
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="mobileNav">
+        <a href="#top" class="nav-link active">HOME</a>
+        <a href="#menu" class="nav-link">MENU</a>
+        <a href="#our-story" class="nav-link">OUR STORY</a>
+        <a href="#contact" class="nav-link">CONTACT US</a>
+      </nav>
+    </header>
+
+    <section class="hero" data-section="home">
+      <div class="hero-content">
+        <h1>Hong Kong Restaurant</h1>
+
+        <p class="hero-info">
+          <span>474 Argyle Street, Moss Vale</span>
+          <span class="divider" aria-hidden="true">|</span>
+          <a href="tel:+61248682208">(02) 4868 2208</a>
+        </p>
+
+        <a href="#menu" class="hero-cta">Menu</a>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu" data-section="menu">
+      <div class="menu-container">
+        <div class="menu-header">
+          <div class="section-eyebrow">Our Menus</div>
+          <h2>Menus</h2>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-card">
+            <img
+              src="images/menu/lunch-special.png"
+              alt="Dim Sum"
+            />
+
+            <div class="menu-card-content">
+              <h3>Lunch Special</h3>
+
+              <p>
+                Our lunch specials are perfect for a quick and satisfying meal,
+                featuring a large variety of dishes that showcase the best of
+                Cantonese cuisine.
+              </p>
+
+              <button type="button" class="menu-link" data-menu="pages/menu-lunch-special.html">
+                View Menu
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <img
+              src="images/menu/full.png"
+              alt="Full Menu"
+            />
+
+            <div class="menu-card-content">
+              <h3>Full Menu</h3>
+
+              <p>
+                View our full menu, containing all dishes as well as set meals,
+                drinks and traditional dishes.
+              </p>
+
+              <button type="button" class="menu-link" data-menu="pages/menu-full.html">
+                View Menu
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <img
+              src="images/menu/yum-cha.png"
+              alt="Noodles"
+            />
+
+            <div class="menu-card-content">
+              <h3>Yum Cha Menu</h3>
+
+              <p>
+                Explore authentic Cantonese cuisine through our yum cha
+                offerings. Available every day.
+              </p>
+
+              <button type="button" class="menu-link" data-menu="pages/menu-yum-cha.html">
+                View Menu
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <img
+              src="images/menu/traditional.png"
+              alt="Traditional Cantonese dishes"
+            />
+
+            <div class="menu-card-content">
+              <h3>Traditional Menu</h3>
+
+              <p>
+                Time-honoured Cantonese classics passed down through
+                generations, prepared with traditional techniques.
+              </p>
+
+              <button type="button" class="menu-link" data-menu="pages/menu-traditional.html">
+                View Menu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="our-story" data-section="story">
+      <div class="story-showcase">
+        <div class="story-content">
+          <div class="section-eyebrow">Our Story</div>
+
+          <h2>A Journey From Guangdong To Australia</h2>
+
+          <div class="story-subsections">
+            <div class="story-subsection">
+              <h3>Our History</h3>
+
+              <p>
+                Winnie and Fai came to Australia from Guangdong, China in 1987
+                and 1989 respectively. Fai had previously worked as an engineer
+                in China, but with limited English skills when he first arrived
+                in Australia, he was unable to continue in his profession.
+              </p>
+
+              <p>
+                Beginning a new chapter of life here, Fai started working in
+                Chinese restaurants across NSW and Queensland. Through those
+                experiences, he developed a deep passion for Cantonese cooking
+                and hospitality that would eventually shape the foundation of
+                Hong Kong Restaurant.
+              </p>
+            </div>
+
+            <div class="story-subsection">
+              <h3>Our Restaurant Journey</h3>
+
+              <p>
+                In 1999, Fai and Winnie took over Hong Kong Restaurant from
+                Fai’s brother. Fai became the restaurant’s head chef while
+                Winnie managed the daily operations. Together, they raised four
+                daughters and one son — many of whom you may still occasionally
+                see helping out around the restaurant on weekends.
+              </p>
+
+              <p>
+                Originally located across the road “under the railway bridge”,
+                the restaurant relocated to its current home in 2015 while
+                continuing to serve the same authentic Cantonese flavours and
+                warm family hospitality that guests have loved for decades.
+              </p>
+            </div>
+
+            <div class="story-subsection">
+              <h3>Cantonese Cuisine</h3>
+
+              <p>
+                Cantonese cuisine originates from Southern China, particularly
+                the Guangdong and Hong Kong region, where the focus is on fresh
+                ingredients and natural flavours with minimal seasoning.
+              </p>
+
+              <p>
+                Many of the dishes and words people know today — including yum
+                cha, dim sum, and gow gee — all come from Cantonese culture. Our
+                cooking continues to honour those traditions through techniques
+                such as wok stir-frying and steaming.
+              </p>
+            </div>
+          </div>
+
+          <div class="story-signature">
+            <div class="signature-line"></div>
+            <div class="signature-text">The Su Family • Since 1999</div>
+          </div>
+        </div>
+
+        <div class="story-collage">
+          <div class="collage-img collage-large">
+            <img
+              src="images/about/mum-and-dad.png"
+              alt="Winnie and Fai, co-owners of Hong Kong Restaurant, smiling together in the restaurant"
+            />
+          </div>
+
+          <div class="collage-img collage-top">
+            <img
+              src="images/about/dad.png"
+              alt="Fai, head chef and co-owner of Hong Kong Restaurant, cooking in the kitchen"
+            />
+          </div>
+
+          <div class="collage-img collage-bottom">
+            <img
+              src="images/about/dumplings.png"
+              alt="Dumplings being made in the kitchen at Hong Kong Restaurant, showcasing traditional Cantonese cooking techniques"
+            />
+          </div>
+
+          <div class="story-stat">
+            <h3>25+</h3>
+            <p>
+              Years of authentic Cantonese dining, family tradition, and
+              unforgettable celebrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="gallery-section" id="gallery" data-section="gallery">
+      <div class="gallery-container">
+        <div class="gallery-header">
+          <div class="section-eyebrow">From Our Kitchen</div>
+          <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item tall">
+            <img
+              src="images/gallery/1.png"
+              alt="Handmade dim sum"
+            />
+          </div>
+          <div class="gallery-item wide">
+            <img
+              src="images/gallery/2.png"
+              alt="Dining experience"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/3.png"
+              alt="Wok-fried noodles"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/4.png"
+              alt="Live seafood dish"
+            />
+          </div>
+          <div class="gallery-item wide">
+            <img
+              src="images/gallery/5.png"
+              alt="Chef cooking in the kitchen"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/6.png"
+              alt="Cantonese rice dish"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="images/gallery/7.png"
+              alt="Yum cha spread"
+            />
+          </div>
+        </div>
+
+        <div class="gallery-cta">
+          <a
+            href="https://maps.app.goo.gl/9b8aQvBq7PEknR6n6"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View More Photos on Google &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="reviews" data-section="reviews">
+      <div class="reviews-container">
+        <div class="reviews-header">
+          <div class="section-eyebrow">What Guests Say</div>
+          <h2>Reviews</h2>
+          <div class="reviews-rating">
+            <span class="stars">★★★★★</span>
+            <span class="score">4.5</span>
+            <span class="label">on Google Reviews</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              “We were here for lunch today and what can we say. Exceptional
+              food great service and so friendly. Will refer anyone to come
+              here. Will be back definitely.”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">J</div>
+              <div class="review-meta">
+                <div class="name">Jyotika C.</div>
+                <div class="date">Local Guide · Google Reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              “Excellent food and service. My honey chicken was cooked to
+              perfection. Also, the large spring roll was enormous!”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">h</div>
+              <div class="review-meta">
+                <div class="name">hothand621</div>
+                <div class="date">Google Reviews</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              “Been eating here for 20 year, even after moving interstate a must
+              everything we come through. The owner Winnie is very attentive and
+              friendly, the food is excellent and very affordable.”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">G</div>
+              <div class="review-meta">
+                <div class="name">George S.</div>
+                <div class="date">Google Reviews</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-cta">
+          <a
+            href="https://maps.app.goo.gl/9b8aQvBq7PEknR6n6"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Read All Reviews on Google</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact" data-section="contact">
+      <div class="footer-logo">Hong Kong <span>Restaurant</span></div>
+
+      <p>
+        Authentic Cantonese dining crafted with tradition, family, and heart.
+      </p>
+
+      <p
+        style="
+          margin-top: 18px;
+          color: rgba(255, 255, 255, 0.75);
+          line-height: 1.8;
+        "
+      >
+        474 Argyle Street, Moss Vale NSW 2577<br />
+        (02) 4868 2208<br />
+        <a
+          href="https://www.facebook.com/HongKongRestaurantMV/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #ff4b4b; text-decoration: none; font-weight: 500"
+          >Follow us on Facebook</a
+        >
+      </p>
+
+      <div class="footer-map">
+        <iframe
+          title="Hong Kong Restaurant location map"
+          src="https://www.google.com/maps?q=474+Argyle+Street,+Moss+Vale,+NSW,+2577,+Australia&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="trading-hours">
+        <h3>Trading Hours</h3>
+        <ul>
+          <li>
+            <span class="day">Monday</span>
+            <span class="time closed">Closed</span>
+          </li>
+          <li>
+            <span class="day">Tuesday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:00
+                PM</span
+              >
+            </span>
+          </li>
+          <li>
+            <span class="day">Wednesday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:00
+                PM</span
+              >
+            </span>
+          </li>
+          <li>
+            <span class="day">Thursday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:00
+                PM</span
+              >
+            </span>
+          </li>
+          <li>
+            <span class="day">Friday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:30
+                PM</span
+              >
+            </span>
+          </li>
+          <li>
+            <span class="day">Saturday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:30
+                PM</span
+              >
+            </span>
+          </li>
+          <li>
+            <span class="day">Sunday</span>
+            <span class="time">
+              <span class="session"
+                ><span class="session-label">Lunch</span>11:30 AM – 2:30
+                PM</span
+              >
+              <span class="session"
+                ><span class="session-label">Dinner</span>5:00 PM – 9:00
+                PM</span
+              >
+            </span>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div
+      class="menu-modal"
+      id="menuModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu viewer"
+    >
+      <div class="menu-modal-frame">
+        <button
+          type="button"
+          class="menu-modal-close"
+          id="menuModalClose"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
+        <iframe
+          id="menuModalFrame"
+          title="Menu viewer"
+          src="about:blank"
+        ></iframe>
+      </div>
+    </div>
+
+    <script>
+      const sections = document.querySelectorAll("[data-section]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      const activateNavLink = () => {
+        let currentSection = "home";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 140;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+          ) {
+            currentSection = section.getAttribute("data-section");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+
+          const href = link.getAttribute("href");
+
+          if (
+            (currentSection === "home" && href === "#top") ||
+            (currentSection === "story" && href === "#our-beginning") ||
+            (currentSection === "menu" && href === "#menu") ||
+            (currentSection === "contact" && href === "#contact")
+          ) {
+            link.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", activateNavLink);
+
+      activateNavLink();
+
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileNav = document.getElementById("mobileNav");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenuBtn.classList.toggle("active");
+        mobileNav.classList.toggle("open");
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenuBtn.classList.remove("active");
+          mobileNav.classList.remove("open");
+        });
+      });
+
+      // MENU MODAL
+      const menuModal = document.getElementById("menuModal");
+      const menuModalFrame = document.getElementById("menuModalFrame");
+      const menuModalClose = document.getElementById("menuModalClose");
+
+      const openMenuModal = (src) => {
+        menuModalFrame.src = src;
+        menuModal.classList.add("open");
+        document.body.classList.add("modal-open");
+      };
+
+      const closeMenuModal = () => {
+        menuModal.classList.remove("open");
+        document.body.classList.remove("modal-open");
+        // Clear iframe so PDF stops loading/rendering in the background
+        setTimeout(() => {
+          menuModalFrame.src = "about:blank";
+        }, 250);
+      };
+
+      document.querySelectorAll(".menu-link[data-menu]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openMenuModal(btn.getAttribute("data-menu"));
+        });
+      });
+
+      menuModalClose.addEventListener("click", closeMenuModal);
+
+      menuModal.addEventListener("click", (e) => {
+        if (e.target === menuModal) closeMenuModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && menuModal.classList.contains("open")) {
+          closeMenuModal();
+        }
+      });
+    </script>
+  </body>
+</html>
